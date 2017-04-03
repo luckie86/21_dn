@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block naslov %} {% endblock naslov %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <img class="img-responsive text-center" src="/assets/img/Front.png">
+            <h1 class="text-center">Hello, Dear Guest!</h1>
+            <p class="text-center">Welcome to Filton Hotels</p>
+        </div>
+
+        <ul class="nav nav-pills">
+            <li role="presentation" {% block home %} {% endblock home %}><a href="/">Home</a></li>
+            <li role="presentation" {% block login %} {% endblock login %}><a href="/login">LogIn</a></li>
+            <li role="presentation" {% block guestbook %} {% endblock guestbook %}><a href="/guestbook">GuestBook</a></li>
+            <li role="presentation" {% block opinions %} {% endblock opinions %}><a href="/opinions">Your Opinions</a></li>
+            <li role="presentation" {% block blog %} {% endblock blog %}><a href="/blog">Blog</a></li>
+            <li role="presentation" {% block contact %} {% endblock contact %}><a href="/contact">Contact</a></li>
+        </ul>
+
+        {% block vsebina %} {% endblock %}
+
+    </div>
+
+
+</body>
+
+</html>

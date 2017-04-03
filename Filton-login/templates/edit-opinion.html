@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Filton Hotels | Edit Opinion
+{% endblock naslov %}
+
+
+{% block vsebina %}
+
+<h3> Edit Your Message: </h3>
+
+<form method="post" action="/opinions-details/{{ opinion.key.id() }}/edit">
+    <h4> Your First and Last Name: </h4>
+    <input name="name" value="{{ opinion.first_last_name }}"> </input>
+    <h4>Your Email: </h4>
+    <input name="email" value="{{ opinion.email }}"> </input>
+    <h4>Your Opinion Counts!: </h4>
+    <input name="opinion" placeholder="Leave us your opinion..." value="{{ opinion.opinion }}"> </input>
+    <br>
+    <br>
+    <button type="submit"> Confirm edit! </button>
+    <br>
+</form>
+
+<ul class="nav nav-pills">
+    <li>
+        <a href="/opinions"> Back to Opinions </a>
+    </li>
+</ul>
+
+{% endblock vsebina %}

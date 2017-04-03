@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Filton Hotels | Your Opinions / Details
+{% endblock naslov %}
+
+{% block vsebina %}
+<ul class="nav nav-pills">
+    <li>
+        <br>
+        {{ opinion.time }} - {{ opinion.first_last_name }} - {{ opinion.email }} - {{ opinion.opinion }}
+    </li>
+    <li>
+        <a href="/opinions-details/{{ opinion.key.id() }}/edit">Edit your Message </a>
+    </li>
+    <li>
+        <a href="/opinions-details/{{ opinion.key.id() }}/delete">Delete your Message </a>
+    </li>
+</ul>
+{% endblock vsebina %}

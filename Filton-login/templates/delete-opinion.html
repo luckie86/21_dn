@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Filton Hotels | Delete Opinion
+{% endblock naslov %}
+
+
+{% block vsebina %}
+
+<h3> Delete Your Message: </h3>
+
+<form method="post" action="/opinions-details/{{ opinion.key.id() }}/delete">
+    <h4> Your First and Last Name: </h4>
+    <p>{{ opinion.first_last_name }} </p>
+    <h4>Your Email: </h4>
+    <p> {{ opinion.email }} </p>
+    <h4>Your Opinion: </h4>
+    <p>{{ opinion.opinion }} </p>
+    <br>
+    <br>
+    <button type="submit"> Confirm delete! </button>
+    <br>
+</form>
+
+<ul class="nav nav-pills">
+    <li>
+        <a href="/opinions"> Back to Opinions </a>
+    </li>
+</ul>
+
+{% endblock vsebina %}

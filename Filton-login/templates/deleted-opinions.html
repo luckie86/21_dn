@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Filton Hotels | Deleted Opinions
+{% endblock naslov %}
+
+
+{% block vsebina %}
+
+<h3> Deleted Opinions: </h3>
+
+{% for opinion in del_opins %}
+<ul class="nav nav-pills">
+    <li>
+        <br>
+        {{ opinion.time }} - {{ opinion.first_last_name }} - {{ opinion.email }} - {{ opinion.opinion }}
+    </li>
+    <li>
+        <a href="/opinions-details/{{ opinion.key.id() }}/restore">Restore Message </a>
+    </li>
+    <li>
+        <a href="/opinions-details/{{ opinion.key.id() }}/complete">Complete delete </a>
+    </li>
+</ul>
+{% endfor %}
+
+{% endblock vsebina %}

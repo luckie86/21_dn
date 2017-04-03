@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Filton Hotels | Guestbook
+{% endblock naslov %}
+
+{% block guestbook %}
+class="active"
+{% endblock guestbook %}
+
+
+
+{% block vsebina %}
+{% if logged_in %}
+<form method="post" action="/saved">
+
+    <input type="hidden" name="name" value="{{ user.nickname() }}"> </input>
+
+    <input type="hidden" name="email" value="{{ user.email() }}"> </input>
+    <h4>Your Opinion Counts!: </h4>
+    <textarea name="opinion" placeholder="Leave us your opinion..."></textarea>
+    <br>
+    <br>
+    <button type="submit"> Submit your messsage! </button>
+</form>
+{% else %}
+    <h2> You are not LoggedIn </h2>
+    <a href="/login"> LoggIn </a>
+{% endif %}
+
+{% endblock vsebina %}
+
